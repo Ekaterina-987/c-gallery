@@ -8,13 +8,14 @@ function sendRequest() {
     data.append('image', img)
     data.append('text', postText)
     data.append('tags', postHastags)
-    fetch('https://c-gallery.polinashneider.space/api/v1/posts/', {
+    fetch('https://c-gallery.polinashneider.space/api/v1/posts', {
 
             method: 'POST',
             headers: {
                 Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MTc3MTYzLCJpYXQiOjE2NzIzMzg3NjMsImp0aSI6IjU4YWFhMGRjMDEwNDQ0NDc4YTk1ZWQ2NmFkN2RiNTFlIiwidXNlcl9pZCI6MjZ9.q_cjugFIBSy4xsGbj_kN1DokdBqrNpwxJxHOdzquUsM'
             },
-            body: data,
+            body: JSON.stringify({ data })
+
         })
         .then((result) => {
             showSuccess;
