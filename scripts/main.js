@@ -1,5 +1,5 @@
 import { addPostModal } from './newPost.js';
-import { updateImageDisplay, fileUpload, img, postText, postHastags } from './newFoto.js';
+import { updateImageDisplay, fileUpload, postText, postHastags } from './newFoto.js';
 import { sendRequest } from './request.js';
 
 const buttonPublication = document.querySelector('#add-photo');

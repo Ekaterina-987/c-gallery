@@ -7,4 +7,4 @@ function addPostModal() {
     bodyOverlay.classList.add('active');
 }
 
-export { addPostModal }
+export { addPostModal, newPost, bodyOverlay }
