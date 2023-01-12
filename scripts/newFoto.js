@@ -1,5 +1,5 @@
 const fileUpload = document.querySelector('#file-upload');
-const preview = document.querySelector('.add-post-modal__step-1');
+const postStep1 = document.querySelector('.add-post-modal__step-1');
 const postStep2 = document.querySelector('.add-post-modal__step-2');
 const modalFooter = document.querySelector('.modal__footer');
 const img = document.querySelector('#uploaded-photo');
@@ -9,14 +9,13 @@ const postHastags = document.querySelector('#post-hashtags')
 function updateImageDisplay() {
 
     fileUpload.addEventListener("change", () => {
-        let file = fileUpload.files[0];
+        const file = fileUpload.files[0];
         img.src = URL.createObjectURL(file);
+        postStep1.classList.add('hidden');
+        postStep2.classList.remove('hidden');
+        modalFooter.classList.remove('hidden');
     });
 
-    preview.classList.add('hidden');
-    postStep2.classList.remove('hidden');
-    modalFooter.classList.remove('hidden');
 }
 
-
-export { updateImageDisplay, fileUpload, postText, postHastags }
+export { updateImageDisplay, fileUpload, postText, postHastags, postStep1, postStep2, modalFooter }
